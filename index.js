@@ -1,6 +1,11 @@
 //const readline = require("readline");
 import { createInterface } from "readline";
-import { soma, subtracao } from "./operacoesMatematicas.js";
+import {
+  divisao,
+  multiplicacao,
+  soma,
+  subtracao,
+} from "./operacoesMatematicas.js";
 
 const leitor = createInterface({
   input: process.stdin,
@@ -9,7 +14,7 @@ const leitor = createInterface({
 
 leitor.question("Digite o primeiro número\n>", (numero1) => {
   leitor.question(
-    "Digite a operação:\n+: soma\n-: subtração\n>",
+    "Digite a operação:\n+: soma\n-: subtração\n*: multiplicação\n/: divisão>",
     (operacao) => {
       leitor.question("digiter o segundo número\n>", (numero2) => {
         const num1 = Number(numero1);
@@ -21,6 +26,10 @@ leitor.question("Digite o primeiro número\n>", (numero1) => {
           resultado = soma(num1, num2);
         } else if (operacao == "-") {
           resultado = subtracao(num1, num2);
+        } else if (operacao == "*") {
+          resultado = multiplicacao(num1, num2);
+        } else if (operacao == "/") {
+          resultado = divisao(num1, num2);
         } else {
           console.log("Operação invalida");
         }

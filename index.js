@@ -43,5 +43,3 @@ leitor.question("Digite o primeiro número\n>", (numero1) => {
     },
   );
 });
-
-console.log("oooooooooo");
